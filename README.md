@@ -12,7 +12,7 @@ The model is built using Keras and deployed via a FastAPI backend. A React front
 ## Features
 
 - Predict potato leaf disease from an image.  
-- Trained deep learning model using Keras.  
+- Trained CNN deep learning model using Keras.  
 - REST API built with FastAPI to serve predictions.  
 - React frontend to upload images and display results.
 
