@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "http://localhost:5173",  # React dev server origin
+    "http://localhost:5173",
 ]
 
 app.add_middleware(
@@ -20,9 +20,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL = tf.keras.models.load_model("C:/Users/nisar/OneDrive/Documents/Project/Potato-Disease-Classification/Store-Model/1.keras")
+MODEL = tf.keras.models.load_model("C:/Users/nisar/OneDrive/Documents/Project/Potato-Disease-Classification/Store-Model/vgg16_model.keras")
 
-CLASS_NAMES = ['Early Blight', 'Late Blight', 'Healthy']
+CLASS_NAMES = [
+                'Apple__Black__Rot',
+                'Apple__Healthy',
+                'Apple__Scab',
+                'Cedar__Apple__Rust',
+                'Potato___Early_blight',
+                'Potato___Late_blight',
+                'Potato___healthy'
+            ]
 
 @app.get("/ping")
 async def ping():
